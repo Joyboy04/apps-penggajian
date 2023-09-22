@@ -34,7 +34,7 @@
 
   <div class="form-group mb-2 ml-5">
     <label for="staticEmail2">Tahun: </label>
-     <select class="form-control ml-3" name="bulan">
+     <select class="form-control ml-3" name="tahun">
         <option value="">--Pilih Tahun--</option>
         <?php $tahun = date('Y'); 
         for($i=2020;$i<$tahun+3;$i++) {?>
@@ -47,8 +47,21 @@
   <a href="" class="btn btn-success mb-2 ml-3"><i class="fas fa-plus"></i>Input Kehadiran</a>
 </form>
   </div>
+
+  <?php 
+    if((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')){
+      $bulan = $_GET['bulan'];
+      $tahun = $_GET['tahun'];
+      $bulantahun= $bulan.$tahun;
+    }else{
+      $bulan = date('m');
+      $tahun = date('Y');
+      $bulantahun= $bulan.$tahun;
+    }
+
+  ?>
 <div class="alert alert-info">
-    Menampilkan Data Kehadiran Pegawai Bulan:  Tahun:
+    Menampilkan Data Kehadiran Pegawai Bulan: <span class="font-weight-bold"><?php echo $bulan ?></span> Tahun: <span class="font-weight-bold"><?php echo $tahun ?></span> 
 </div>
 </div>
 
