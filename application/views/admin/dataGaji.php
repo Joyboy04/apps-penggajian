@@ -6,9 +6,10 @@
 <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
 </div>
 
+
 <div class="card mb-3">
   <div class="card-header bg-primary text-white">
-    Filter Data Absensi
+    Filter Data Gaji Pegawai
   </div>
   <div class="card-body">
   <form class="form-inline">
@@ -44,7 +45,7 @@
      </select>
         </div>
   <button type="submit" class="btn btn-primary mb-2 ml-auto"><I class="fas fa-eye"></I>Tampilkan Data</button>
-  <a href="<?php echo base_url('admin/dataAbsensi/inputAbsensi') ?>" class="btn btn-success mb-2 ml-3"><i class="fas fa-plus"></i>Input Kehadiran</a>
+  <a href="" class="btn btn-success mb-2 ml-3"><i class="fas fa-plus"></i>Cetak Daftar Gaji</a>
 </form>
   </div>
 
@@ -66,41 +67,8 @@
 </div>
 </div>
 
-<?php 
-$jml_data = count($absensi);
-if($jml_data > 0) { 
-?>
 
-<?php echo $this->session->flashdata('pesan') ?>
-<table class="table table-bordered table-striped">
-  <tr>
-    <td class="text-center">No</td>
-    <td class="text-center">NIK</td>
-    <td class="text-center">Nama Pegawai</td>
-    <td class="text-center">Jenis Kelamin</td>
-    <td class="text-center">Jabatan</td>
-    <td class="text-center">Hadir</td>
-    <td class="text-center">Sakit</td>
-    <td class="text-center">Alpha</td>
-  </tr>
 
-  <?php $no=1; foreach($absensi as $a) : ?>
-    <tr>
-      <td><?php echo $no++ ?></td>
-      <td><?php echo $a->nik ?></td>
-      <td><?php echo $a->nama_pegawai ?></td>
-      <td><?php echo $a->jenis_kelamin ?></td>
-      <td><?php echo $a->nama_jabatan ?></td>
-      <td><?php echo $a->hadir ?></td>
-      <td><?php echo $a->sakit ?></td>
-      <td><?php echo $a->alpha ?></td>
-    </tr>
-    <?php endforeach ?>
-</table>
-
-<?php } else{ ?>
-       <spann class="badge badge-danger"><i class="fas fa-info-circle"></i> Data Masih Kosong, Silahkan input data kehadiran pada bulan dan tahun yang anda pilih!</spann>
-<?php } ?>
 
 </div>
 
