@@ -15,7 +15,13 @@
 
    public function cetakLaporanAbsensi()
    {
-      
+      $data['title'] = "Cetak Laporan Absensi Pegawai";
+      $bulan= $this->input->post('bulan');
+      $tahun= $this->input->post('tahun');
+      $bulantahun= $bulan.$tahun;
+      $data['lap_kehadiran'] = $this->db->query("SELECT * FROM data_kehadiran WHERE bulan='$bulantahun' ORDER BY nama_pegawai ASC")->result();
+      $this->load->view('templates_admin/header', $data);
+      $this->load->view('admin/cetakLaporanAbsensi', $data);
    }
  
  }
