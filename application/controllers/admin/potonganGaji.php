@@ -70,7 +70,7 @@ class potonganGaji extends CI_Controller {
     if ($this->form_validation->run() == FALSE) {
         $this->updateData();
     } else {
-        $id           = $this->input->post('id_jabatan');
+        $id           = $this->input->post('id');
         $potongan      = $this->input->post('potongan');
         $jml_potongan   = $this->input->post('jml_potongan');
 

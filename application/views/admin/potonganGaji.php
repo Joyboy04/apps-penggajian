@@ -8,7 +8,7 @@
 
 <?php echo $this->session->flashdata('pesan'); ?>
 
-<a class="btn btn-sm btn-success mb-2 mt-2" href="<?php echo base_url('admin/potonganGaji/tambahData') ?>"><i class="fas fa-plus"></i>Tambah Data</a>
+<a class="btn btn-sm btn-primary mb-2 mt-2" href="<?php echo base_url('admin/potonganGaji/tambahData') ?>"><i class="fas fa-plus"></i>Tambah Data</a>
 
 
 <table class="table table-bordered table-striped">
