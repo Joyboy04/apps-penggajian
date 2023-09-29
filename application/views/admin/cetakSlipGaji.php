@@ -58,9 +58,16 @@
         <hr style="width: 60%; border-width: 5px; color: black">
         <div class="info">
             <?php
+            $nama = $this->input->post('nama_pegawai');
             $bulan = $this->input->post('bulan');
             $tahun = $this->input->post('tahun');
             ?>
+
+                <tr>
+                    <td>Nama Pegawai</td>
+                    <td>:</td>
+                    <td><?php echo $nama ?></td>
+                </tr>
 
                 <tr>
                     <td>Bulan</td>

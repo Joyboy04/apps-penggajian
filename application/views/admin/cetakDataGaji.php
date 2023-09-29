@@ -58,7 +58,7 @@
             ?>
         <h1>PT. INDONESIA BANGKIT</h1>
         <h2>Daftar Gaji Pegawai</h2>
-        <h3>---------------------------------------------------------------------------------------------------------------</h3>
+        <hr style="width: 60%; border-width: 5px; color: black">
         <div class="info">
                 <tr>
                     <td>Bulan</td>
