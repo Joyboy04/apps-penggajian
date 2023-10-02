@@ -26,47 +26,55 @@
             text-align: center;
             margin-bottom: 5px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
         .info {
             margin-bottom: 10px;
-        }
-        .signature {
-            text-align: right;
-            margin-top: 20px;
-        }
-        .signature p {
-            margin: 0;
-            font-style: italic;
         }
     </style>
 </head>
 <body>
     
         <h1>PT. INDONESIA BANGKIT</h1>
-        <h2>Laporan Absensi Pegawai</h2>
+        <h2>Slip Gaji Pegawai</h2>
         <hr style="width: 60%; border-width: 5px; color: black">
         <div class="info">
-            <?php
-            $nama = $this->input->post('nama_pegawai');
-            $bulan = $this->input->post('bulan');
-            $tahun = $this->input->post('tahun');
-            ?>
+            
+        <?php 
+    if((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')){
+        $bulan = $_GET['bulan'];
+        $tahun = $_GET['tahun'];
+        $bulantahun= $bulan.$tahun;
+      }else{
+        $bulan = date('m');
+        $tahun = date('Y');
+        $bulantahun= $bulan.$tahun;
+      }
+        ?>
+ 
+
+        <?php foreach ($potongan as $p) {
+             $potongan = $p->jml_potongan;
+        } ?>
+            
+
+            <?php foreach ($print_slip as $ps) : ?>
+                <?php $potongan_gaji = $ps->alpha * $potongan; ?>
+            <table style="width: 100%">
+                <tr>
+                    <td width="20%">Nama Pegawai</td>
+                    <td width="2%">:</td>
+                    <td><?php echo $ps->nama_pegawai ?></td>
+                </tr>
 
                 <tr>
-                    <td>Nama Pegawai</td>
+                    <td>NIK</td>
                     <td>:</td>
-                    <td><?php echo $nama ?></td>
+                    <td><?php echo $ps->nik ?></td>
+                </tr>
+
+                <tr>
+                    <td>Nama jabatan</td>
+                    <td>:</td>
+                    <td><?php echo $ps->nama_jabatan ?></td>
                 </tr>
 
                 <tr>
@@ -74,46 +82,73 @@
                     <td>:</td>
                     <td><?php echo $bulan ?></td>
                 </tr>
+
+
                 <tr>
                     <td>Tahun</td>
                     <td>:</td>
                     <td><?php echo $tahun ?></td>
                 </tr>
-
-        </div>
-
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th class="text-center">No</th>
-                <th class="text-center">Nama Pegawai</th>
-                <th class="text-center">NIK</th>
-                <th class="text-center">Jabatan</th>
-                <th class="text-center">Hadir</th>
-                <th class="text-center">Sakit</th>
-                <th class="text-center">Alpha</th>
-            </tr>
-            
-            <?php $no = 1; foreach ($lap_kehadiran as $l) : ?>
-
-                <tr>
-                    <td><?php echo $no++ ?></td>
-                    <td><?php echo $l->nama_pegawai ?></td>
-                    <td><?php echo $l->nik ?></td>
-                    <td><?php echo $l->nama_jabatan ?></td>
-                    <td><?php echo $l->hadir ?></td>
-                    <td><?php echo $l->sakit ?></td>
-                    <td><?php echo $l->alpha ?></td>
- 
-                </tr>
-            <?php endforeach; ?>
         </table>
 
-        <div class="signature">
-            <p>Jakarta, <?php echo date("d M Y") ?><br>HRD</p>
-            <br>
-            <br>
-            <p>_____________________________</p>
+        <table class="table table-bordered table-striped mt-3" width="100%">
+            <tr>
+                <th class="text-center"  width="5%">No</th>
+                <th class="text-center">Keterangan</th>
+                <th class="text-center">Jumlah</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Gaji Pokok</td>
+                <td>Rp.<?php echo number_format($ps->gaji_pokok, 0, ',', '.') ?></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Tunjangan Transportasi</td>
+                <td>Rp.<?php echo number_format($ps->tj_transport, 0, ',', '.') ?></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Uang Makan</td>
+                <td>Rp.<?php echo number_format($ps->uang_makan, 0, ',', '.') ?></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Potongan</td>
+                <td>Rp.<?php echo number_format($potongan_gaji, 0, ',', '.') ?></td>
+            </tr>
+            <tr>
+                <th colspan="2" style="text-align: center;">Total Gaji</th>
+                <td>Rp.<?php echo number_format($ps->gaji_pokok + $ps->tj_transport + $ps->uang_makan - $potongan_gaji, 0, ',', '.') ?></td>
+            </tr>
+
+        </table>
+                
+
         </div>
+
+
+        <div class="signature">
+            <table width="100%">
+                <tr>
+                    <td></td>
+                    <td>
+                        <p>Pegawai</p>
+                        <br>
+                        <br>
+                        <p class="font-weight-bold"><?php echo $ps->nama_pegawai ?></p>
+                    </td>
+                    <td width="200px">
+                        <p>Jakarta, <?php echo date("d M Y") ?><br>Finance</p>
+                        <br>
+                        <br>
+                        <p>_____________________________</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <?php endforeach; ?>
     
 </body>
 </html>

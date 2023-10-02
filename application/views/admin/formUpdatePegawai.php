@@ -59,8 +59,8 @@
             <label>Status</label>
             <select name="status" class="form-control">
                 <option value="<?php echo $p->status ?>"><?php echo $p->status ?></option>
-                <option value="Pegawai">Pegawai</option>
-                <option value="Magang">Magang</option>
+                <option value="Karyawan Tetap">Karyawan Tetap</option>
+                <option value="Karyawan Kontrak">Karyawan Kontrak</option>
             </select>
             <?php echo form_error('status','<div class="text-small text-danger"></div>') ?>
            </div> 

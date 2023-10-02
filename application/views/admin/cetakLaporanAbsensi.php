@@ -26,28 +26,8 @@
             text-align: center;
             margin-bottom: 5px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
         .info {
             margin-bottom: 10px;
-        }
-        .signature {
-            text-align: right;
-            margin-top: 20px;
-        }
-        .signature p {
-            margin: 0;
-            font-style: italic;
         }
     </style>
 </head>
@@ -61,10 +41,10 @@
             $bulan = $this->input->post('bulan');
             $tahun = $this->input->post('tahun');
             ?>
-
+            <table width="100%">
                 <tr>
-                    <td>Bulan</td>
-                    <td>:</td>
+                    <td width="20%">Bulan</td>
+                    <td width="2%">:</td>
                     <td><?php echo $bulan ?></td>
                 </tr>
                 <tr>
@@ -72,10 +52,11 @@
                     <td>:</td>
                     <td><?php echo $tahun ?></td>
                 </tr>
+            </table>
 
         </div>
 
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped text-center mt-3" width="100%">
             <tr>
                 <th class="text-center">No</th>
                 <th class="text-center">Nama Pegawai</th>
@@ -100,13 +81,15 @@
                 </tr>
             <?php endforeach; ?>
         </table>
-
-        <div class="signature">
-            <p>Jakarta, <?php echo date("d M Y") ?><br>HRD</p>
-            <br>
-            <br>
-            <p>_____________________________</p>
-        </div>
+    <table style="text-align:right;" width="100%">
+        <td width="200px">
+                        <p>Jakarta, <?php echo date("d M Y") ?><br>HRD</p>
+                        <br>
+                        <br>
+                        <p>_________________________</p>
+                    </td>
+                </tr>
+            </table>
     
 </body>
 </html>
