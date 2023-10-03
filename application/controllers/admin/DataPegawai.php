@@ -39,6 +39,7 @@ class dataPegawai extends CI_Controller {
             $tanggal_masuk = $this->input->post('tanggal_masuk');
             $jabatan = $this->input->post('jabatan');
             $status = $this->input->post('status');
+            $hak_akses = $this->input->post('hak_akses');
             $photo = $_FILES['photo']['name'];
             if($photo=''){}else{
                 $config ['upload_path'] = './assets/photo/';
@@ -58,6 +59,7 @@ class dataPegawai extends CI_Controller {
                 'jabatan' => $jabatan,
                 'tanggal_masuk' => $tanggal_masuk,
                 'status' => $status,
+                'hak_akses' => $hak_akses,
                 'photo' => $photo,
             );
 
@@ -102,6 +104,7 @@ class dataPegawai extends CI_Controller {
         $tanggal_masuk = $this->input->post('tanggal_masuk');
         $jabatan = $this->input->post('jabatan');
         $status = $this->input->post('status');
+        $hak_akses = $this->input->post('hak_akses');
         $photo = $_FILES['photo']['name'];
         if($photo){
             $config ['upload_path'] = './assets/photo/';
@@ -122,6 +125,7 @@ class dataPegawai extends CI_Controller {
             'jabatan' => $jabatan,
             'tanggal_masuk' => $tanggal_masuk,
             'status' => $status,
+            'hak_akses' => $hak_akses,
         );
 
         $where = array(

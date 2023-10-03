@@ -64,6 +64,16 @@
            </div> 
 
            <div class="form-group">
+            <label>Hak Akses</label>
+            <select name="hak_akses" class="form-control">
+                <option value="">--Pilih Hak Akses--</option>
+                <option value="1">Admin</option>
+                <option value="2">Pegawai</option>
+            </select>
+            <?php echo form_error('status','<div class="text-small text-danger"></div>') ?>
+           </div> 
+
+           <div class="form-group">
             <label>Photo</label>
             <input type="file" name="photo" class="form-control">
            </div> 
