@@ -1,3 +1,10 @@
+<style>
+    /* Increase the font size for the sidebar text */
+    .nav-item .nav-link {
+        font-size: 25px; /* Adjust the size as needed */
+    }
+</style>
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -80,7 +87,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="<?php echo base_url('welcome/logout') ?>">
                     <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
@@ -127,8 +134,8 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Selamat Datang!</span>
-                                <i class="fas fa-user"></i>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600">Selamat Datang <?php echo $this->session->userdata('nama_pegawai') ?>!</span>
+                                <img class="img-profile rounded-circle" style="max-width:80px;" src="<?php echo base_url('assets/photo/'). $this->session->userdata('photo') ?>">
                             </a>
                            
                         </li>

@@ -13,7 +13,7 @@
 
           <div class="form-group">
             <label>NIK</label>
-            <input type="text" name="nik" class="form-control">
+            <input type="number" name="nik" class="form-control">
             <?php echo form_error('nik','<div class="text-small text-danger"></div>') ?>
            </div> 
 
@@ -21,6 +21,18 @@
             <label>Nama Pegawai</label>
             <input type="text" name="nama_pegawai" class="form-control">
             <?php echo form_error('nama_pegawai','<div class="text-small text-danger"></div>') ?>
+           </div> 
+
+           <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control">
+            <?php echo form_error('username','<div class="text-small text-danger"></div>') ?>
+           </div> 
+
+           <div class="form-group">
+            <label>Password</label>
+            <input type="text" name="password" class="form-control">
+            <?php echo form_error('password','<div class="text-small text-danger"></div>') ?>
            </div> 
 
            <div class="form-group">

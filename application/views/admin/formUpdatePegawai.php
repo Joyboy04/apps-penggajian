@@ -26,6 +26,18 @@
            </div> 
 
            <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" value="<?php echo $p->username ?>">
+            <?php echo form_error('username','<div class="text-small text-danger"></div>') ?>
+           </div> 
+
+           <div class="form-group">
+            <label>Password</label>
+            <input type="text" name="password" class="form-control" value="<?php echo $p->password ?>">
+            <?php echo form_error('password','<div class="text-small text-danger"></div>') ?>
+           </div> 
+
+           <div class="form-group">
             <label>Jenis Kelamin</label>
             <select name="jenis_kelamin" class="form-control">
                 <option value="<?php echo $p->jenis_kelamin ?>"><?php echo $p->jenis_kelamin ?></option>
