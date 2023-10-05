@@ -7,7 +7,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->_rules();
 		if($this->form_validation->run() == FALSE){
-			$data['title'] ="Form-Login";
+			$data['title'] ="Login Page";
 			$this->load->view('formLogin', $data);
 			$this->load->view('templates_admin/header', $data);
 		}else{
@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
 				$this->session->set_userdata('username', $cek->username);
 				$this->session->set_userdata('nama_pegawai', $cek->nama_pegawai);
 				$this->session->set_userdata('photo', $cek->photo);
+				$this->session->set_userdata('id_pegawai', $cek->id_pegawai);
 				switch($cek->hak_akses){
 					case 1 : redirect('admin/dashboard');
 						break;
