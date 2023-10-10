@@ -37,7 +37,7 @@
      <select class="form-control ml-3" name="tahun">
         <option value="">--Pilih Tahun--</option>
         <?php $tahun = date('Y'); 
-        for($i=2020;$i<$tahun+3;$i++) {?>
+        for($i=2020;$i<$tahun+5;$i++) {?>
         <option value="<?php echo $i ?>"><?php echo $i ?></option>
         <?php } ?>
 
@@ -97,7 +97,7 @@ if($jml_data > 0) {
       <td><?php echo $a->sakit ?></td>
       <td><?php echo $a->alpha ?></td>
     </tr>
-    <?php endforeach ?>
+    <?php endforeach;  ?>
 </table>
 </div>
 <?php } else{ ?>

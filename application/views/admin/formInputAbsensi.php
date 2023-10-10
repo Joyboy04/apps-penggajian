@@ -97,7 +97,7 @@
       <td><input type="number" name="alpha[]" class="form-control" value="0"></td>
 
     </tr>
-    <?php endforeach ?>
+    <?php endforeach; ?>
 </table>
 </form>
 

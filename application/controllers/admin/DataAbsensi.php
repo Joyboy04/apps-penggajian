@@ -70,6 +70,7 @@ class DataAbsensi extends CI_Controller {
           }
         }
 
+
         $this->penggajianModel->insert_batch('data_kehadiran', $simpan);
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Ditambahkan!!</strong>
@@ -101,6 +102,8 @@ class DataAbsensi extends CI_Controller {
       INNER JOIN data_jabatan ON data_pegawai.jabatan = data_jabatan.nama_jabatan
       WHERE NOT EXISTS (SELECT * FROM data_kehadiran WHERE bulan = '$bulantahun' AND data_pegawai.nik = data_kehadiran.nik) ORDER BY data_pegawai.nama_pegawai ASC")->result();
     
+
+
       $this->load->view('templates_admin/header', $data);
       $this->load->view('templates_admin/sidebar');
       $this->load->view('admin/formInputAbsensi', $data);
