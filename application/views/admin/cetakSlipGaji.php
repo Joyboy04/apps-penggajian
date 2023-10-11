@@ -80,14 +80,14 @@
                 <tr>
                     <td>Bulan</td>
                     <td>:</td>
-                    <td><?php echo $bulan ?></td>
+                    <td><?php echo substr($ps->bulan, 0,2)  ?></td><td><?php echo $bulan ?></td>
                 </tr>
 
 
                 <tr>
                     <td>Tahun</td>
                     <td>:</td>
-                    <td><?php echo $tahun ?></td>
+                    <td><?php echo substr($ps->bulan, 2,4)  ?></td>
                 </tr>
         </table>
 

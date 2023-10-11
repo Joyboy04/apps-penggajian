@@ -24,7 +24,7 @@
     <?php $pot_gaji = $g->alpha * $potongan; ?>
     <?php $g->pot_gaji = $pot_gaji; ?>
     <tr>
-        <td><?php echo date('F Y', strtotime($g->bulan)) ?></td>
+        <td><?php echo $g->bulan ?></td>
         <td>Rp.<?php echo number_format($g->gaji_pokok, 0, ',', '.') ?></td>
         <td>Rp.<?php echo number_format($g->tj_transport, 0, ',', '.') ?></td>
         <td>Rp.<?php echo number_format($g->uang_makan, 0, ',', '.') ?></td>

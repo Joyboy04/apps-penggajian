@@ -37,18 +37,6 @@
         <h2>Slip Gaji Pegawai</h2>
         <hr style="width: 60%; border-width: 5px; color: black">
         <div class="info">
-            
-        <?php 
-    if((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')){
-        $bulan = $_GET['bulan'];
-        $tahun = $_GET['tahun'];
-        $bulantahun= $bulan.$tahun;
-      }else{
-        $bulan = date('m');
-        $tahun = date('Y');
-        $bulantahun= $bulan.$tahun;
-      }
-        ?>
  
 
         <?php foreach ($potongan as $p) {
@@ -80,14 +68,14 @@
                 <tr>
                     <td>Bulan</td>
                     <td>:</td>
-                    <td><?php echo $bulan ?></td>
+                    <td><?php echo substr($ps->bulan, 0,2)  ?></td>
                 </tr>
 
 
                 <tr>
                     <td>Tahun</td>
                     <td>:</td>
-                    <td><?php echo $tahun ?></td>
+                    <td><?php echo substr($ps->bulan, 2,4)  ?></td>
                 </tr>
         </table>
 
