@@ -38,7 +38,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('gantiPassword') ?>">
+                <a class="nav-link" href="<?php echo base_url('pegawai/gantiPassword') ?>">
                     <i class="fas fa-fw fa-lock"></i>
                     <span>Ganti Password</span></a>
             </li>
