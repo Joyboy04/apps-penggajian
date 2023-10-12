@@ -65,6 +65,14 @@ or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
 ***************
 Acknowledgement
+
+
+***************
+About this apps
+***************
+This apps helps you to manage gaji karyawan and manage absensi karyawan and karyawan will be using for page karyawan for download the slip gaji
+
+
 ***************
 
 The CodeIgniter team would like to thank EllisLab, all the
